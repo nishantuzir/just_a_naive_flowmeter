@@ -17,7 +17,9 @@ $ python3 ./janf.py -p ./sample/testing.pcap -t 1.00
 
 if you need help, the following command would be useful:
 
-$ ./janf.py -h
+$ python3 ./janf.py -h
+
+PS: timeout is in seconds and default value is 10.00 
 
 DEPENDENCY:
 -----------
