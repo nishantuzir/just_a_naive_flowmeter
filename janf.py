@@ -6,7 +6,9 @@ import numpy as np
 from scipy.stats import kurtosis,skew,hmean
 
 def generate_flows(pcap_file_path,time_out):
+    print("creating json...")
     os.system('tshark -2 -R "ssl" -r '+pcap_file_path+' -T json >'+pcap_file_path.rsplit('.pcap')[0] + '.json')
+    print("json created...")
     with open(pcap_file_path.rsplit('.pcap')[0] + '.json','r') as f:
         raw_data = json.load(f)
     
@@ -66,3 +68,4 @@ if __name__ == "__main__":
         generate_flows(args.pcap, args.time_out)
     else:
         parser.print_help()
+    print('flow created...')
