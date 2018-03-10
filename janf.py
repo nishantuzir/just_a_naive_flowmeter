@@ -55,7 +55,9 @@ def generate_flows(pcap_file_path,time_out):
             if count2 != 0 and packet_length2 != []:
                 with open(pcap_file_path.rsplit('.pcap')[0] + '.txt','a') as f:
                     f.write('{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6:0.3f}\t{7:0.3f}\t{8:0.3f}\t{9:0.3f}\t{10:0.3f}\n'.format(ips[src],ips[dst],src_port,dst_port,count2,packet_length2,np.mean(packet_length2),np.std(packet_length2),kurtosis(packet_length2),skew(packet_length2),hmean(packet_length2)))
-                
+    
+    os.remove(pcap_file_path.rsplit('.pcap')[0] + '.json')
+    print('json cleanup done.')                
                 
 if __name__ == "__main__":
     import sys
