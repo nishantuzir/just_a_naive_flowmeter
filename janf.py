@@ -35,7 +35,8 @@ def generate_flows(pcap_file_path,time_out):
                             src_port = raw_data[packet]['_source']['layers']['tcp']['tcp.srcport']
                             dst_port = raw_data[packet]['_source']['layers']['tcp']['tcp.dstport']
                             if 'ssl' in raw_data[packet]['_source']['layers']:
-                                packet_length1.append(int(raw_data[packet]['_source']['layers']['ssl']['ssl.record']['ssl.record.length']))
+                                if 'ssl.record' in raw_data[packet]['_source']['layers']['ssl']:
+                                    packet_length1.append(int(raw_data[packet]['_source']['layers']['ssl']['ssl.record']['ssl.record.length']))
                 
                     else:    
                         if raw_data[packet]['_source']['layers']['ip']['ip.src'] == ips[src] and raw_data[packet]['_source']['layers']['ip']['ip.dst'] == ips[dst] or raw_data[packet]['_source']['layers']['ip']['ip.src'] == ips[dst] and raw_data[packet]['_source']['layers']['ip']['ip.dst'] == ips[src]:
