@@ -26,3 +26,17 @@ DEPENDENCY:
 python3.x
 
 tshark 2.4.x
+
+PACKAGES:
+---------
+The following python packages will be already be installed with the python3.x distibutions, if not, kindly install them:
+
+1.os
+
+2.pathlib
+
+3.json
+
+4.sys
+
+5.argparse
