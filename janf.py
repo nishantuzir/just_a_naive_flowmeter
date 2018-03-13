@@ -4,6 +4,7 @@ import os
 import pandas as pd
 import numpy as np
 from scipy.stats import kurtosis,skew,hmean
+from scipy.stats.mstats import gmean
 
 def generate_flows(pcap_file_path,time_out):
     print("creating json...")
@@ -51,10 +52,10 @@ def generate_flows(pcap_file_path,time_out):
         
             if count1 != 0 and packet_length1 != []:
                 with open(pcap_file_path.rsplit('.pcap')[0] + '.txt','a') as f:
-                    f.write('{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6:0.3f}\t{7:0.3f}\t{8:0.3f}\t{9:0.3f}\t{10:0.3f}\n'.format(ips[src],ips[dst],src_port,dst_port,count1,packet_length1,np.mean(packet_length1),np.std(packet_length1),kurtosis(packet_length1),skew(packet_length1),hmean(packet_length1)))
+                    f.write('{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6:0.3f}\t{7:0.3f}\t{8:0.3f}\t{9:0.3f}\t{11:0.3f}\n'.format(ips[src],ips[dst],src_port,dst_port,count1,packet_length1,np.mean(packet_length1),np.std(packet_length1),kurtosis(packet_length1),skew(packet_length1),hmean(packet_length1),gmean(packet_length1)))
             if count2 != 0 and packet_length2 != []:
                 with open(pcap_file_path.rsplit('.pcap')[0] + '.txt','a') as f:
-                    f.write('{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6:0.3f}\t{7:0.3f}\t{8:0.3f}\t{9:0.3f}\t{10:0.3f}\n'.format(ips[src],ips[dst],src_port,dst_port,count2,packet_length2,np.mean(packet_length2),np.std(packet_length2),kurtosis(packet_length2),skew(packet_length2),hmean(packet_length2)))
+                    f.write('{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6:0.3f}\t{7:0.3f}\t{8:0.3f}\t{9:0.3f}\t{10:0.3f}\t{11:0.3f}\n'.format(ips[src],ips[dst],src_port,dst_port,count2,packet_length2,np.mean(packet_length2),np.std(packet_length2),kurtosis(packet_length2),skew(packet_length2),hmean(packet_length2),gmean(packet_length2)))
     
     print("removing json...")
     os.remove(pcap_file_path.rsplit('.pcap')[0] + '.json')
