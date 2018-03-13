@@ -17,7 +17,11 @@ $ python3 ./janf.py -p ./sample/testing.pcap -t 1.00
 OR    
 python3 ./janf.py -pcap ./sample/testing.pcap -t 1.00
 
-$ python3 ./loop_folder.py -f ./sample -t 0.01    OR    python3 ./loop_folder.py -folder ./sample -t 0.01
+
+$ python3 ./loop_folder.py -f ./sample -t 0.01   
+OR    
+python3 ./loop_folder.py -folder ./sample -t 0.01
+
 
 if you need help, the following command would be useful:
 
