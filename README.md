@@ -29,6 +29,8 @@ tshark 2.4.x
 
 PACKAGES:
 ---------
+The packages required for running the flowmeter, are provided in the 'requirements.txt' file.
+
 The following python packages will be already be installed with the python3.x distibutions, if not, kindly install them:
 
 1.os
