@@ -38,7 +38,7 @@ def generate_flows(pcap_file_path,time_out):
                             src_port = raw_data[packet]['_source']['layers']['tcp']['tcp.srcport']
                             dst_port = raw_data[packet]['_source']['layers']['tcp']['tcp.dstport']
                             if 'ssl' in raw_data[packet]['_source']['layers']:
-                                if 'ssl.record' in raw_data[packet]['_source']['layers']['ssl'] and if 'ssl.record.length' in raw_data[packet]['_source']['layers']['ssl']:
+                                if 'ssl.record' in raw_data[packet]['_source']['layers']['ssl'] and 'ssl.record.length' in raw_data[packet]['_source']['layers']['ssl']:
                                     packet_length1.append(int(raw_data[packet]['_source']['layers']['ssl']['ssl.record']['ssl.record.length']))
                 
                     else:    
@@ -47,7 +47,7 @@ def generate_flows(pcap_file_path,time_out):
                             src_port = raw_data[packet]['_source']['layers']['tcp']['tcp.srcport']
                             dst_port = raw_data[packet]['_source']['layers']['tcp']['tcp.dstport']
                             if 'ssl' in raw_data[packet]['_source']['layers']:
-                                if 'ssl.record' in raw_data[packet]['_source']['layers']['ssl'] and if 'ssl.record.length' in raw_data[packet]['_source']['layers']['ssl']:
+                                if 'ssl.record' in raw_data[packet]['_source']['layers']['ssl'] and 'ssl.record.length' in raw_data[packet]['_source']['layers']['ssl']:
                                     packet_length2.append(int(raw_data[packet]['_source']['layers']['ssl']['ssl.record']['ssl.record.length']))    
         
             if count1 != 0 and packet_length1 != []:
@@ -59,7 +59,9 @@ def generate_flows(pcap_file_path,time_out):
     
     print("removing json...")
     os.remove(pcap_file_path.rsplit('.pcap')[0] + '.json')
-    print('Done')                
+    print('json cleanup done.')
+    print('flow created')
+                    
                 
 if __name__ == "__main__":
     import sys
@@ -72,4 +74,3 @@ if __name__ == "__main__":
         generate_flows(args.pcap, args.time_out)
     else:
         parser.print_help()
-    print('flow created...')
