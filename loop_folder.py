@@ -8,6 +8,7 @@ def loop_through_folder(directory,time_out):
         path_in_str = str(path)
         print('working on {}'.format(path_in_str))
         generate_flows(path_in_str,time_out)
+        print('-----------------------')
     
 
 if __name__ == "__main__":
