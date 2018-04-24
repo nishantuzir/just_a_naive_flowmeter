@@ -1,5 +1,6 @@
 # just a naive flowmwter
 
+
 DESCRIPTION:
 ------------
 This is a simple tool to create a flow from a pcap file. To be specific, it takes in 'ssl' packets and converts them into flows. It does not employ the conventional(and more efficient) procedure of parsing a pcap file to create the flows. Instead, it converts the pcap file to a json file and does json parsing in order to create the flows, based on a given timeout.
