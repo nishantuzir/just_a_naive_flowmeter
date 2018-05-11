@@ -15,14 +15,18 @@ PS: The above flow is just an example and not real. Also, each value is tab sepa
 
 USAGE:
 ------
-    $ python3 ./janf.py -p ./sample/testing.pcap -t 1.00    
-    OR    
+    $ python3 ./janf.py -p ./sample/testing.pcap -t 1.00
+    
+OR    
+    
     $ python3 ./janf.py -pcap ./sample/testing.pcap -t 1.00
 
 
 
     $ python3 ./loop_folder.py -f ./sample -t 0.01   
-    OR    
+    
+OR
+    
     $ python3 ./loop_folder.py -folder ./sample -t 0.01
 
 
