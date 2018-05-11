@@ -46,9 +46,9 @@ PS: timeout is in seconds and default value is 10.00
 
 DEPENDENCY:
 -----------
-python3.x
+* python3.x
 
-tshark 2.4.x
+* tshark 2.4.x
 
 PACKAGES:
 ---------
@@ -58,14 +58,14 @@ The following python packages will be already be installed with the python3.x di
 
 * os
 
-2.pathlib
+* pathlib
 
-3.json
+* json
 
-4.sys
+* sys
 
-5.argparse
+* argparse
 
-6.datetime
+* datetime
 
-7.time
+* time
