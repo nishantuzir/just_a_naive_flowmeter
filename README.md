@@ -20,6 +20,7 @@ USAGE:
 OR    
     
     $ python3 ./janf.py -pcap ./sample/testing.pcap -t 1.00
+    
 
 
 
@@ -28,6 +29,7 @@ OR
 OR
     
     $ python3 ./loop_folder.py -folder ./sample -t 0.01
+    
 
 
 
